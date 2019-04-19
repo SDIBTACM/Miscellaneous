@@ -376,7 +376,7 @@ CREATE TABLE IF NOT EXISTS `OnlineJudge`.`groups` (
   `deleted_at` TIMESTAMP NOT NULL DEFAULT 0,
   `name` VARCHAR(64) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `uq_name` (`name` ASC))
+  UNIQUE INDEX `uq_name` (`name` ASC, `deleted_at` ASC))
 ENGINE = InnoDB;
 
 SHOW WARNINGS;

@@ -379,12 +379,12 @@ CREATE TABLE IF NOT EXISTS `OnlineJudge`.`discuss_posts` (
   PRIMARY KEY (`id`),
   INDEX `idx_topic_id` (`topic_id` ASC),
   INDEX `idx_owner` (`owner_id` ASC),
-  CONSTRAINT `fk_diacuss_post_topic`
+  CONSTRAINT `fk_discuss_post_topic`
     FOREIGN KEY (`topic_id`)
     REFERENCES `OnlineJudge`.`discuss_topics` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_diacuss_post_owner`
+  CONSTRAINT `fk_discuss_post_owner`
     FOREIGN KEY (`owner_id`)
     REFERENCES `OnlineJudge`.`users` (`id`)
     ON DELETE NO ACTION

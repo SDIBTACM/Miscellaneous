@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `OnlineJudge`.`login_logs` (
   `ip` VARCHAR(40) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   INDEX `idx_user` (`user_id` ASC),
-  INDEX `idx_login_time` (`created_at` DESC))
+  INDEX `idx_login_time` (`created_at` ASC))
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
@@ -86,7 +86,8 @@ CREATE TABLE IF NOT EXISTS `OnlineJudge`.`problems` (
   `testdata_updated_at` TIMESTAMP NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   INDEX `idx_user` (`owner_id` ASC),
-  INDEX `idx_source` (`source` ASC))
+  INDEX `idx_source` (`source` ASC),
+  INDEX `idx_title` (`title` ASC))
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
@@ -107,10 +108,9 @@ CREATE TABLE IF NOT EXISTS `OnlineJudge`.`contests` (
   `end_before` TIMESTAMP NOT NULL DEFAULT 0,
   `privilege` TINYINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '0: public\n1: private\n2: protect\n3: need register',
   `privilege_info` VARCHAR(384) NOT NULL DEFAULT '{}',
-  `allow_language` BIGINT NOT NULL DEFAULT 0 COMMENT '0 is all allow,if a bit set 1, that mean not allow',
+  `allow_language` BIGINT NOT NULL DEFAULT 0 COMMENT '0 is all allow, if a bit set 1, that mean the kind of lang not allow',
   `lock_rank_at` TINYINT NOT NULL DEFAULT 0 COMMENT '0 for no, 20 for at last 20% time',
   PRIMARY KEY (`id`),
-  INDEX `idx_owner` (`owner_id` ASC),
   INDEX `idx_start` (`start_at` ASC),
   INDEX `idx_privilege` (`privilege` ASC))
 ENGINE = InnoDB;
@@ -152,7 +152,6 @@ CREATE TABLE IF NOT EXISTS `OnlineJudge`.`contest_problems` (
   `problem_order` TINYINT UNSIGNED NOT NULL DEFAULT 0 COMMENT 'the serial number of problem',
   PRIMARY KEY (`id`),
   INDEX `idx_contest` (`contest_id` ASC),
-  INDEX `idx_problem` (`problem_id` ASC),
   UNIQUE INDEX `uq_contest_problem` (`contest_id` ASC, `problem_id` ASC))
 ENGINE = InnoDB;
 
@@ -174,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `OnlineJudge`.`contest_registers` (
   `actual_name` VARCHAR(64) NOT NULL DEFAULT '',
   `college` VARCHAR(64) NOT NULL DEFAULT '',
   `discipline` VARCHAR(64) NOT NULL DEFAULT '' COMMENT 'it means: a branch of knowledge, typically one studied in higher education.',
-  `sex` TINYINT NOT NULL DEFAULT 1 COMMENT '1: male\n2: female',
+  `sex` TINYINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '0: secret\n1: male\n2: female',
   `status` TINYINT NOT NULL DEFAULT -1 COMMENT '-1: pending\n0: accept\n1: wait for update info\n2: reject',
   PRIMARY KEY (`id`),
   INDEX `idx_user` (`user_id` ASC),
@@ -198,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `OnlineJudge`.`contest_results` (
   `user_id` INT UNSIGNED NOT NULL DEFAULT 0,
   `contest_id` INT UNSIGNED NOT NULL DEFAULT 0,
   `submit_count` INT NOT NULL DEFAULT 0 COMMENT 'value mean submit times',
-  `ac_at` TIMESTAMP NOT NULL DEFAULT 0,
+  `ac_at` DATETIME NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   INDEX `idx_contest_problem` (`contest_problem_id` ASC),
   INDEX `idx_user` (`user_id` ASC),
@@ -245,17 +244,18 @@ CREATE TABLE IF NOT EXISTS `OnlineJudge`.`solutions` (
   `owner_id` INT UNSIGNED NOT NULL DEFAULT 0,
   `problem_id` INT UNSIGNED NOT NULL DEFAULT 0,
   `contest_id` INT UNSIGNED NOT NULL DEFAULT 0,
-  `hash` VARCHAR(128) NOT NULL DEFAULT '',
+  `hash` VARCHAR(255) NOT NULL DEFAULT '',
   `lang` TINYINT UNSIGNED NOT NULL DEFAULT 0,
   `result` TINYINT NOT NULL DEFAULT -2 COMMENT '-3:RJ WAIT\n-2:WAIT\n-1:RUN\n0:AC\n1:WA\n2:PE\n3:TLE\n4:MLE\n5:OLE\n6:RE\n7:SE',
-  `time_used` INT UNSIGNED NOT NULL DEFAULT 0,
-  `memory_used` INT UNSIGNED NOT NULL DEFAULT 0,
+  `time_used` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT 'ms',
+  `memory_used` INT UNSIGNED NOT NULL DEFAULT 0 COMMENT 'kb',
   `similar_at` BIGINT UNSIGNED NOT NULL DEFAULT 0,
   `similar_percent` TINYINT UNSIGNED NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   INDEX `idx_user` (`owner_id` ASC),
   INDEX `idx_problem` (`problem_id` ASC),
-  INDEX `idx_result` (`result` ASC))
+  INDEX `idx_result` (`result` ASC),
+  INDEX `idx_contest_id` (`contest_id` ASC))
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
@@ -446,8 +446,8 @@ CREATE TABLE IF NOT EXISTS `OnlineJudge`.`contest_ip_limits` (
   `contest_id` INT UNSIGNED NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `deny_ip` TEXT NOT NULL DEFAULT '' COMMENT 'JSON CIDR',
-  `allow_ip` TEXT NOT NULL DEFAULT '' COMMENT 'JSON CIDR',
+  `deny_ips` TEXT NOT NULL DEFAULT '' COMMENT 'JSON CIDR',
+  `allow_ips` TEXT NOT NULL DEFAULT '' COMMENT 'JSON CIDR',
   PRIMARY KEY (`contest_id`))
 ENGINE = InnoDB;
 

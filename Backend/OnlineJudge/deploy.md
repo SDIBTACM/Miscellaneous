@@ -1,10 +1,10 @@
 ## 环境依赖
 - JDK 11
-- MySQL 5.7
+- MySQL 5.7+
 - Redis
 - Docker
 
-## 相关工具
+## 开发工具
 - IntelliJ IDEA
 - Maven
 - IDEA Plugin
@@ -13,14 +13,14 @@
   - Lombok
 
 ## 包依赖
-- Swagger(Doc生成)
+- Swagger (Doc生成)
 - Druid
 - Spring Boot JPA
 
 ## 开发
 ### 事前准备
 
-1. 准备一个 `MySQL` 用户和表， 并将 `src/main/resources/application.yml` 拷贝到 `config/application.yml` ， 并且将 `config/application.yml` 中的配置修改为适用本地开发环境的配置。`src/main/resources/application.yml` **不做任何改动**
+1. 准备一个 `MySQL` 用户和表； 重命名 `config/application.yml.example` ， 并且将 `config/application.yml` 中的配置修改为适用于本地开发环境或生产环境的配置。`src/main/resources/application.yml` **不做任何改动**
 
 2. 配置 CheckStyle
     - 进入 CheckStyle 配置：File | Settings | Other Settings | Checkstyle；

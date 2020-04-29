@@ -261,6 +261,66 @@
 </ul>
 </li>
 </ol>
+<h2 id="&#x6D4B;&#x8BD5;">&#x6D4B;&#x8BD5;</h2>
+<h3 id="debugdata">DebugData</h3>
+<p><code>DebugData(src/main/resources/DebugData)</code>&#x4F5C;&#x4E3A; Online Judge &#x7684;&#x5047;&#x6570;&#x636E;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x63A5;&#x53E3;&#x8C03;&#x8BD5;&#x3002; &#x5982;&#x9700;&#x4F7F;&#x7528;&#xFF0C;&#x8BF7;&#x6307;&#x5B9A;<code>online-judge.debug.generator-data=true</code>(&#x6B64;&#x4E3A;application.propertity&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x9700;&#x8981;yaml&#x8BF7;&#x81EA;&#x884C;&#x8F6C;&#x6362;)&#x3002;</p>
+<p><code>DebugData</code>&#x5185;&#x90E8;&#x6570;&#x636E;&#x4E3A;JSON, &#x4E3A;&#x9632;&#x6B62;&#x89E3;&#x6790;&#x51FA;&#x9519;&#xFF0C;&#x8BF7;&#x4E25;&#x683C;&#x9075;&#x5FAA;&#x4EE5;&#x4E0B;&#x683C;&#x5F0F;:</p>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;all-data&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;class_pkg&quot;</span><span class="token operator">:</span><span class="token string">&quot;full name of the json object&apos;s class&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;data&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span><span class="token string">&quot;obj&apos;s id&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;object filed&quot;</span><span class="token operator">:</span><span class="token string">&quot;object properties&quot;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x4F5C;&#x4E3A;&#x7F16;&#x5199;DebugData&#x65F6;&#x7684;&#x53C2;&#x8003;(&#x8BF7;&#x6CE8;&#x610F;&#x5728;Entity&#x4E2D;&#x5927;&#x90E8;&#x5206;&#x5B57;&#x6BB5;&#x5747;&#x4E0D;&#x53EF;&#x4E3A;&#x7A7A;):</p>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;all-data&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;class_pkg&quot;</span><span class="token operator">:</span><span class="token string">&quot;cn.edu.sdtbu.model.entity.UserEntity&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;data&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span><span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;email&quot;</span><span class="token operator">:</span><span class="token string">&quot;admin@mail.com&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;nickname&quot;</span><span class="token operator">:</span><span class="token string">&quot;admin&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;password&quot;</span><span class="token operator">:</span><span class="token string">&quot;password&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;role&quot;</span><span class="token operator">:</span><span class="token string">&quot;ADMIN&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;school&quot;</span><span class="token operator">:</span><span class="token string">&quot;admin_school&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;status&quot;</span><span class="token operator">:</span><span class="token string">&quot;NORMAL&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;username&quot;</span><span class="token operator">:</span><span class="token string">&quot;admin&quot;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span><span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;email&quot;</span><span class="token operator">:</span><span class="token string">&quot;teacher@mail.com&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;nickname&quot;</span><span class="token operator">:</span><span class="token string">&quot;teacher&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;password&quot;</span><span class="token operator">:</span><span class="token string">&quot;password&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;role&quot;</span><span class="token operator">:</span><span class="token string">&quot;TEACHER&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;school&quot;</span><span class="token operator">:</span><span class="token string">&quot;teacher_school&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;status&quot;</span><span class="token operator">:</span><span class="token string">&quot;NORMAL&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;username&quot;</span><span class="token operator">:</span><span class="token string">&quot;teacher&quot;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;class_pkg&quot;</span><span class="token operator">:</span><span class="token string">&quot;cn.edu.sdtbu.model.entity.ProblemEntity&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;data&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;id&quot;</span><span class="token operator">:</span><span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;specialJudge&quot;</span><span class="token operator">:</span><span class="token string">&quot;false&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;problemType&quot;</span><span class="token operator">:</span><span class="token string">&quot;NORMAL&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;hide&quot;</span><span class="token operator">:</span><span class="token string">&quot;false&quot;</span><span class="token punctuation">,</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
 
                                 
                                 </section>
@@ -304,7 +364,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"部署","level":"1.3.2","depth":2,"next":{"title":"项目结构","level":"1.3.3","depth":2,"path":"Backend/OnlineJudge/ProjectStructure.md","ref":"Backend/OnlineJudge/ProjectStructure.md","articles":[]},"previous":{"title":"编码规范","level":"1.3.1","depth":2,"path":"Backend/OnlineJudge/DevelopSpecifications.md","ref":"Backend/OnlineJudge/DevelopSpecifications.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-highlight","prism","prism-themes"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"prism-themes":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Backend/OnlineJudge/deploy.md","mtime":"2020-04-14T01:12:23.286Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-16T01:54:05.641Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"部署","level":"1.3.2","depth":2,"next":{"title":"项目结构","level":"1.3.3","depth":2,"path":"Backend/OnlineJudge/ProjectStructure.md","ref":"Backend/OnlineJudge/ProjectStructure.md","articles":[]},"previous":{"title":"编码规范","level":"1.3.1","depth":2,"path":"Backend/OnlineJudge/DevelopSpecifications.md","ref":"Backend/OnlineJudge/DevelopSpecifications.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-highlight","prism","prism-themes"],"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"prism-themes":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Backend/OnlineJudge/deploy.md","mtime":"2020-04-29T13:51:09.508Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-29T13:54:46.349Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

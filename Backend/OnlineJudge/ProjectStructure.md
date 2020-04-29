@@ -2,33 +2,33 @@
 ## 项目结构
 
 ```bash
-├── java                            
-│   └── cn
-│       └── edu
-│           └── sdtbu
-│               ├── aop
-│               │   ├── annotation
-│               │   └── aspect
-│               ├── cache
-│               ├── config
-│               ├── controller
-│               │   └── api
-│               ├── exception
-│               ├── handler
-│               ├── interceptor
-│               ├── listener
-│               ├── model
-│               │   ├── entity
-│               │   ├── enums
-│               │   ├── param
-│               │   ├── properties
-│               │   └── vo
-│               ├── repository
-│               │   └── base
-│               ├── service
-│               │   ├── base
-│               │   └── impl
-│               └── util
-└── resources
-
+├── aop
+│   ├── annotation
+│   └── aspect
+├── cache
+├── config
+├── controller
+│   └── api
+│       ├── admin
+│       └── debug
+├── exception
+├── handler
+├── interceptor
+├── listener
+├── manager
+│   └── impl
+├── model
+│   ├── dto
+│   ├── entity
+│   │   └── contest
+│   ├── enums
+│   ├── param
+│   ├── properties
+│   └── vo
+├── repository
+│   └── base
+├── service
+│   ├── base
+│   └── impl
+└── util
 ```

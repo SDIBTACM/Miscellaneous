@@ -30,6 +30,7 @@
     - 进入编辑器配置：File | Settings | Editor | Code Style；
     - 导入 checkstyle.xm 配置：![](../static/CheckStyleConfigGuide.png)
     - 选择 ./config/checkstyle/checkstyle.xml 配置文件，点击确定即可。
+4. 开发阶段，为防止生成假数据可能导致的bug，请将 `spring.jpa.hibernate.ddl-auto` 调至 **create** 模式
 
 ## 测试
 
